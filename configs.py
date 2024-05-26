@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     DATABASE_HOST:str = ""
     DATABASE_PORT:str = ""
     
-    DATABASE_URL:str = f"postgresql:asyncpg"
+    DATABASE_URL:str = f"postgresql:asyncpg://{DATABASE_USER}:{DATABASE_PASS}@{DATABASE_SERVER}:{DATABASE_PORT}/{DATABASE_NAME}"
     
     DB_base = declarative_base()
     
